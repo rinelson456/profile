@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-xs-12">
+        <a routerLink="/profile" class="back">&#8678;</a>
+        <h3>What's your name?</h3>
+        <form>
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" id="name" class="form-control" #firstNameInput>
+                </div>
+                <div class="col-sm-1 form-group">
+                </div>
+                <div class="col-sm-5 form-group">
+                    <label for="name">Last Name</label>
+                    <input type="text" id="name" class="form-control" #lastNameInput>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn" type="submit" (click)="onAddItem()">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

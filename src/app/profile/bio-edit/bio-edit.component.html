@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-12">
+        <a routerLink="/profile" class="back">&#8678;</a>
+        <form>
+            <h3>What type of passenger are you?</h3>
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <textarea rows="4" type="textarea" class="form-control" #bioInput placeholder="Write a little about yourself. Do you like chatting? Are you a smoker? Do you bring pets with you? etc."></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn" (click)="onAddItem()">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
