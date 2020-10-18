@@ -10,6 +10,8 @@ import { ProfileService } from '../profile.service';
 })
 export class ImageEditComponent implements OnInit {
   @ViewChild('imageInput') imageInputRef: ElementRef;
+  selectedFile: Image;
+
 
   constructor(private profileService: ProfileService) { }
 

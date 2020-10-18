@@ -1,18 +1,20 @@
 <div class="row">
     <div class="col-xs-10">
-        <app-number-edit></app-number-edit>
         <h2>Edit Profile</h2>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSt4hiQEupYJsDB-1obM5qOQ6fPhbGozgPbxg&usqp=CAU" alt="Profile picture" class="img-responsive">
+        <div class="container">
+            <img src="{{ images.image }}" alt="" class="img-responsive">
+            <button routerLink="/image" class="btn">&#x270E;</button>
+        </div>
         <div class="profile-usermenu">
             <ul class="nav">
                 <li class="active">
-                    <a routerLink="/name" style="cursor: pointer" *ngFor="let name of names">
+                    <a routerLink="/name" style="cursor: pointer">
                         <div class="d-flex w-100 justify-content-between">
                             <h6>
                                 <dd class="text-muted">Name</dd>
                             </h6>
                         </div>
-                        <dt> {{ name.firstName }} {{ name.lastName }}</dt>
+                        <dt> {{ names.firstName }} {{ names.lastName }} </dt>
                     </a>
                 </li>
                 <hr>
@@ -23,7 +25,7 @@
                                 <dd class="text-muted">Phone</dd>
                             </h6>
                         </div>
-                        <dt> {{ numbers }} </dt>
+                        <dt> {{ numbers.phone }} </dt>
                     </a>
                 </li>
                 <hr>
@@ -34,7 +36,7 @@
                                 <dd class="text-muted">Email</dd>
                             </h6>
                         </div>
-                        <dt> {{ emails }} </dt>
+                        <dt> {{ emails.email }} </dt>
                     </a>
                 </li>
                 <hr>
@@ -45,7 +47,7 @@
                                 <dd class="text-muted">Bio</dd>
                             </h6>
                         </div>
-                        <dt> {{ bios }} </dt>
+                        <dt> {{ bios.bio }} </dt>
                     </a>
                 </li>
                 <hr>

@@ -12,7 +12,7 @@ import { ProfileService } from './profile.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-    names: Name[];
+    names: Name;
     emails: Email;
     numbers: Number;
     images: Image;
@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
     this.images = this.profileService.getImages();
     this.bios = this.profileService.getBios();
 
-    this.profileService.nameChanged.subscribe((names: Name[]) => {
+    this.profileService.nameChanged.subscribe((names: Name) => {
       this.names = names;
     });
     this.profileService.emailChanged.subscribe((emails: Email) => {
@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
     });
     this.profileService.numberChanged.subscribe((numbers: Number) => {
       this.numbers = numbers;
-      console.log('here');
+      console.log(this.numbers);
     });
     this.profileService.imageChanged.subscribe((images: Image) => {
       this.images = images;

@@ -2,17 +2,17 @@
     <div class="col-xs-12">
         <a routerLink="/profile" class="back">&#8678;</a>
         <h3>Upload a photo of yourself:</h3>
-        <form>
-            <div class="row">
-                <div class="col-sm-5 form-group">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSt4hiQEupYJsDB-1obM5qOQ6fPhbGozgPbxg&usqp=CAU" alt="Profile picture" class="img-responsive">
-                </div>
+        <label class="image-upload-container btn btn-bwm">
+            <span>Select Image</span>
+            <input #imageInput
+                   type="file"
+                   accept="image/*"
+                   (change)="onAddItem()">
+          </label>
+        <div class="row">
+            <div class="col-xs-12">
+                <button routerLink="/profile" class="btn" (click)="onAddItem()">Update</button>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <button class="btn" (click)="onAddItem()">Update</button>
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
