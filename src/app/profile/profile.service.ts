@@ -2,11 +2,11 @@ import { EventEmitter, Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 
-import { Bio } from 'src/shared/bio.module'
-import { Email } from 'src/shared/email.module'
-import { Image } from 'src/shared/image.module'
-import { Name } from 'src/shared/name.module'
-import { Number } from 'src/shared/number.module'
+import { Bio } from '../../shared/bio.module'
+import { Email } from '../../shared/email.module'
+import { Image } from '../../shared/image.module'
+import { Name } from '../../shared/name.module'
+import { Number } from '../../shared/number.module'
 import { DEFAULTBIO, DEFAULTEMAIL, DEFAULTIMAGE, DEFAULTNAME, DEFAULTNUMBER } from '../profile/DEFAULT';
 
 @Injectable()
