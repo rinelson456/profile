@@ -1,9 +1,9 @@
 import { Component, OnInit,} from '@angular/core';
-import { Bio } from '../../shared/bio.module'
-import { Name } from '../../shared/name.module'
-import { Number } from '../../shared/number.module'
-import { Email } from '../../shared/email.module'
-import { Image } from '../../shared/image.module'
+import { Bio } from '../../shared/bio.module';
+import { Name } from '../../shared/name.module';
+import { Number } from '../../shared/number.module';
+import { Email } from '../../shared/email.module';
+import { Image } from '../../shared/image.module';
 import { ProfileService } from './profile.service';
 
 @Component({

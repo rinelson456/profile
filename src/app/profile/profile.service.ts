@@ -1,12 +1,16 @@
-import { EventEmitter } from '@angular/core'
+import { EventEmitter, Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs'
 
 import { Bio } from 'src/shared/bio.module'
 import { Email } from 'src/shared/email.module'
 import { Image } from 'src/shared/image.module'
 import { Name } from 'src/shared/name.module'
 import { Number } from 'src/shared/number.module'
+import { DEFAULTBIO, DEFAULTEMAIL, DEFAULTIMAGE, DEFAULTNAME, DEFAULTNUMBER } from '../profile/DEFAULT';
 
-export class ProfileService{
+@Injectable()
+ export class ProfileService{
     nameChanged= new EventEmitter<Name>();
     emailChanged= new EventEmitter<Email>();
     numberChanged= new EventEmitter<Number>();
@@ -19,38 +23,78 @@ export class ProfileService{
     private images: Image;
     private bios: Bio;
 
-    constructor(){
+    constructor(private http: HttpClient){
 
     }
+
+    public uploadImage(image: File): Observable<any> {
+        const formData = new FormData();
+        console.log(formData);
+        console.log(image);
+        formData.append('image', image);
+        console.log(formData)
+        console.log(this.http.put('/api/v1/image-upload', formData))
+    
+        return this.http.put('/api/v1/image-upload', formData);
+      }
 
 
     getNames() {
         let name = localStorage.getItem("names");
-        this.names = JSON.parse(name);
+        if(name !== null){
+            this.names = JSON.parse(name);
+        }
+        else{
+            this.names = DEFAULTNAME;
+        }
         return this.names;
     }
     
     getEmailAddresses() {
         let email = localStorage.getItem("emails");
-        this.emails = JSON.parse(email);
+        if(email !== null){
+            this.emails = JSON.parse(email);
+        }
+        else{
+            this.emails = DEFAULTEMAIL;
+        }
         return this.emails;
     }
     
     getNumbers() {
         let number = localStorage.getItem("numbers");
-        this.numbers = JSON.parse(number);
+        if(number !== null){
+            this.numbers = JSON.parse(number);
+        }
+        else{
+            this.numbers = DEFAULTNUMBER;
+        }
+
         return this.numbers;
     }
     
     getImages() {
         let image = localStorage.getItem("images");
-        this.images = JSON.parse(image);
+        console.log(image)
+        if(image !== null){
+            this.images = JSON.parse(image);
+    
+        }
+        else{
+            this.images = DEFAULTIMAGE;
+        }
         return this.images;
+        
     }
     
     getBios() {
         let bio = localStorage.getItem("bios");
-        this.bios = JSON.parse(bio);
+        if(bio !== null){
+            this.bios = JSON.parse(bio);
+        }
+        else{
+            this.bios = DEFAULTBIO;
+        }
         return this.bios;
     }
 
@@ -73,6 +117,7 @@ export class ProfileService{
     }
     
     addImages(image: Image) {
+        
         this.images = image;
         this.imageChanged.emit(this.images);
         localStorage.setItem("images", JSON.stringify(image));
@@ -83,4 +128,5 @@ export class ProfileService{
         this.bioChanged.emit(this.bios);
         localStorage.setItem("bios", JSON.stringify(bio));
     }
+
 }

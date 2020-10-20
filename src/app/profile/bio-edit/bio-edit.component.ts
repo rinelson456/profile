@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, } from '@angular/core';
 
-import  { Bio} from '../../../shared/bio.module'
+import  { Bio } from '../../../shared/bio.module'
 import { ProfileService } from '../profile.service';
 
 @Component({
@@ -10,10 +10,12 @@ import { ProfileService } from '../profile.service';
 })
 export class BioEditComponent implements OnInit {
   @ViewChild('bioInput') bioInputRef: ElementRef;
+  bios: Bio;
 
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    this.bios = this.profileService.getBios();
   }
 
   onAddItem(){

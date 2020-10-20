@@ -10,11 +10,13 @@ import { ProfileService } from '../profile.service';
 })
 export class EmailEditComponent implements OnInit {
   @ViewChild('emailInput') emailInputRef: ElementRef;
+  emails : Email;
 
 
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    this.emails = this.profileService.getEmailAddresses();
   }
 
   onAddItem(){

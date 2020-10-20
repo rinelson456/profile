@@ -1,17 +1,17 @@
 <div class="row">
     <div class="col-xs-12">
-        <a routerLink="/profile" class="back">&#8678;</a>
+        <a routerLink="/profile" class="back">&#8249;</a>
         <h3>What's your phone number?</h3>
         <form>
             <div class="row">
                 <div class="col-sm-5 form-group">
                     <label for="name">Your phone number</label>
-                    <input type="text" id="name" class="form-control" #numberInput>
+                    <input type="tel" id="name" class="form-control" #numberInput placeholder="{{ numbers.phone }}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button routerLink="/profile" class="btn" (click)="onAddItem()">Update</button>
+                    <button type="button" routerLink="/profile" class="btn" (click)="onAddItem()">Update</button>
                 </div>
             </div>
         </form>

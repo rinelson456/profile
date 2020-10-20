@@ -10,10 +10,12 @@ import { ProfileService } from '../profile.service';
 })
 export class NumberEditComponent implements OnInit {
   @ViewChild('numberInput') numberInputRef: ElementRef;
+  numbers: Number;
 
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    this.numbers = this.profileService.getNumbers();
   }
 
   onAddItem(){

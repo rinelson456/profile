@@ -11,10 +11,12 @@ import { ProfileService } from '../profile.service';
 export class NameEditComponent implements OnInit {
   @ViewChild('firstNameInput') firstNameInputRef: ElementRef;
   @ViewChild('lastNameInput') lastNameInputInputRef: ElementRef;
+  names: Name;
 
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    this.names = this.profileService.getNames();
   }
 
   onAddItem(){

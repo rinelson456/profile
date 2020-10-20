@@ -13,8 +13,11 @@
                             <h6>
                                 <dd class="text-muted">Name</dd>
                             </h6>
+                            <div class="pull-left">
+                                <dt> {{ names.firstName }} {{ names.lastName }} </dt>
+                            </div>
+                            <div class="pull-right arrow">&#8250;</div>
                         </div>
-                        <dt> {{ names.firstName }} {{ names.lastName }} </dt>
                     </a>
                 </li>
                 <hr>
@@ -24,8 +27,11 @@
                             <h6>
                                 <dd class="text-muted">Phone</dd>
                             </h6>
+                            <div class="pull-left">
+                                <dt> {{ numbers.phone }} </dt>
+                            </div>
+                            <div class="pull-right arrow">&#8250;</div>
                         </div>
-                        <dt> {{ numbers.phone }} </dt>
                     </a>
                 </li>
                 <hr>
@@ -35,8 +41,12 @@
                             <h6>
                                 <dd class="text-muted">Email</dd>
                             </h6>
+                            <div class="pull-left">
+                                <dt> {{ emails.email }} </dt>
+                            </div>
+                            <div class="pull-right arrow">&#8250;</div>
                         </div>
-                        <dt> {{ emails.email }} </dt>
+
                     </a>
                 </li>
                 <hr>
@@ -46,8 +56,11 @@
                             <h6>
                                 <dd class="text-muted">Bio</dd>
                             </h6>
+                            <div class="pull-left">
+                                <dt> {{ bios.bio }} </dt>
+                            </div>
+                            <div class="pull-right arrow">&#8250;</div>
                         </div>
-                        <dt> {{ bios.bio }} </dt>
                     </a>
                 </li>
                 <hr>

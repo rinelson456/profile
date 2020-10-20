@@ -1,17 +1,32 @@
 <div class="row">
     <div class="col-xs-12">
-        <a routerLink="/profile" class="back">&#8678;</a>
+        <a routerLink="/profile" class="back">&#8249;</a>
         <h3>Upload a photo of yourself:</h3>
         <label class="image-upload-container btn btn-bwm">
-            <span>Select Image</span>
+            <!-- <img src="https://bellawangphotography.com/wp-content/uploads/2019/05/Boston-graduation-photographer-Harvard-_0015.jpg" alt="Happy Family" class="img-responsive"> -->
             <input #imageInput
-                   type="file"
-                   accept="image/*"
-                   (change)="onAddItem()">
+                type="file"
+                accept="image/*"
+                (change)="processFile(imageInput)">
+
+                <div *ngIf="selectedFile" class="img-preview-container">
+
+                    <div class="img-preview{{selectedFile.status === 'fail' ? '-error' : ''}}"
+                         [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+                    </div>
+                  
+                    <div *ngIf="selectedFile.pending" class="img-loading-overlay">
+                      <div class="img-spinning-circle"></div>
+                    </div>
+                  
+                    <div *ngIf="selectedFile.status === 'ok'" class="alert alert-success"> Image Uploaded Succesfuly!</div>
+                    <div *ngIf="selectedFile.status === 'fail'" class="alert alert-danger"> Image Upload Failed!</div>
+                  </div>
+            
           </label>
         <div class="row">
             <div class="col-xs-12">
-                <button routerLink="/profile" class="btn" (click)="onAddItem()">Update</button>
+                <button type="button" routerLink="/profile" class="btn" (click)="onAddItem()">Update</button>
             </div>
         </div>
     </div>

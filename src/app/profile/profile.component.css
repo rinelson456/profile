@@ -36,13 +36,14 @@ body {
 
 .container {
     position: relative;
-    width: 50%;
+    width: 150px;
+    height: 150px;
 }
 
 .container .btn {
     position: absolute;
     top: 10%;
-    left: 95%;
+    left: 90%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: white;
@@ -56,4 +57,10 @@ body {
 
 .container .btn:hover {
     background-color: black;
+}
+
+.arrow {
+    color: #888888;
+    font-size: 2rem;
+    font-weight: bold;
 }
